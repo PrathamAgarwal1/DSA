@@ -10,35 +10,19 @@ class Solution {
     // a,b : the arrays
     // Function to return a list containing the union of the two arrays.
     vector<int> findUnion(vector<int> &a, vector<int> &b) {
-        vector<int>Union;
-        int i=0,j=0;
-        while(i<a.size()&&j<b.size()){
-            if(a[i]<=b[j]){
-                if(Union.size()==0||Union.back()!=a[i]){
-                    Union.push_back(a[i]);
-                }
-                i++;
-            }
-            else{
-                if(Union.size()==0||Union.back()!=b[j]){
-                    Union.push_back(b[j]);
-                }
-                j++;
-            }
+        set <int> s;
+        int n=a.size();
+        int m=b.size();
+        for(int i=0;i<n;i++){
+            s.insert(a[i]);
         }
-        while(i<a.size()){
-            if(Union.size()==0||Union.back()!=a[i]){
-                    Union.push_back(a[i]);
-            }
-            i++;
+        for(int j=0;j<m;j++){
+            s.insert(b[j]);
         }
-        while(j<b.size()){
-            if(Union.size()==0||Union.back()!=b[j]){
-                    Union.push_back(b[j]);
-            }
-            j++;
-        }
-        return Union;
+        vector<int>result(s.begin(),s.end());
+        return result;
+        
+        
     }
 };
 
