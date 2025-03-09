@@ -22,6 +22,7 @@ class Array {
 
 
 // } Driver Code Ends
+
 class Solution {
   public:
     // Function to perform selection sort on the given array.
@@ -35,13 +36,13 @@ class Solution {
                 }
             }
             if(min!=i){
-                int temp=arr[min];
-                arr[min]=arr[i];
-                arr[i]=temp;
+                swap(arr[min],arr[i]);
             }
         }
+        // code here
     }
 };
+
 
 //{ Driver Code Starts.
 
