@@ -8,9 +8,7 @@ public:
                 count++;
             }
         }
-        if(count>1){
-            return false;
-        }
+        if(count>1)return false;
         return true;
     }
 };
