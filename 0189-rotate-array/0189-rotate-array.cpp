@@ -4,7 +4,7 @@ public:
         int n=nums.size();
         vector<int>temp(n);
         for(int i=0;i<n;i++){
-            temp[(i+k)%n]=nums[i];
+            temp[(i+(k%n))%n]=nums[i];
         }
         for(int i=0;i<n;i++){
             nums[i]=temp[i];
