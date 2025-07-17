@@ -27,3 +27,14 @@ public:
 
     }
 };
+/*
+Imagine you're searching in a book where some pages got rotated and now the chapters are split oddly.
+
+You open to a middle page.
+
+If the left side is normal and in order, you check if the chapter you're looking for lies in it.
+
+If it doesn't, you skip to the other side.
+
+You always trust the sorted side and use it to decide where the rotation might have hidden your answer.
+*/
