@@ -5,8 +5,8 @@ public:
             return false;
         }
         int n=s.size();
-        map<char,int>sh;
-        map<char,int>th;
+        unordered_map<char,int>sh;
+        unordered_map<char,int>th;
         for(int i=0;i<n;i++){
             sh[s[i]]++;
         }
