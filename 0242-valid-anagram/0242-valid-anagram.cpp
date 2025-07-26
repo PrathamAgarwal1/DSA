@@ -9,8 +9,6 @@ public:
         unordered_map<char,int>th;
         for(int i=0;i<n;i++){
             sh[s[i]]++;
-        }
-        for(int i=0;i<n;i++){
             th[t[i]]++;
         }
         if(sh==th){
