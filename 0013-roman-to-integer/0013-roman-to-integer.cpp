@@ -11,7 +11,7 @@ public:
         rtoi['M']=1000;
         int result=0;
         for(int i=0;i<s.size();i++){
-            if(i+1<s.length() && rtoi[s[i]]<rtoi[s[i+1]]){
+            if(rtoi[s[i]]<rtoi[s[i+1]]){
                 result-=rtoi[s[i]];
             }
             else{//if next is not less that this just simply add 
