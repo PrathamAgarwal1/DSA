@@ -8,7 +8,7 @@ public:
                 count++;
                 if(count==k){
                     bouquets++;
-                    count=0;
+                    count=0;//reset
                 }
             }
             else{
