@@ -2,9 +2,9 @@ class Solution {
 public:
     string reverseWords(string s) {
         int n=s.length();
-        string ans="";
         reverse(s.begin(),s.end());
-        for(int i=0;i<n;i++){
+        string ans="";
+        for(int i=0;i<s.length();i++){
             string word="";
             while(i<n && s[i]!=' '){
                 word+=s[i];
@@ -14,7 +14,6 @@ public:
             if(word.length()>0){
                 ans+=word+" ";
             }
-
         }
         ans.pop_back();
         return ans;
