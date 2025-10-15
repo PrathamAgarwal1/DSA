@@ -1,16 +1,15 @@
 class Solution {
 public:
     string frequencySort(string s) {
-        unordered_map<char,int>mpp;
+        unordered_map <char,int> hashmapp;
         for(int i=0;i<s.size();i++){
-            mpp[s[i]]++;
+            hashmapp[s[i]]+=1;
         }
         string ans="";
         while(ans.length()<s.length()){
-            char maxChar=' ';//stores max character
-            int maxFreq=0;//stores max frequency of max character
-        
-            for(auto it : mpp){
+            char maxChar='\0';
+            int maxFreq=0;
+            for(auto it :hashmapp){
                 if(it.second>maxFreq){
                     maxFreq=it.second;
                     maxChar=it.first;
@@ -19,9 +18,10 @@ public:
             for(int i=0;i<maxFreq;i++){
                 ans+=maxChar;
             }
-            mpp[maxChar]=0;
+            hashmapp[maxChar]=0;//sets maxChar to 0 taaki waapis check naa ho
         }
         return ans;
+        
+
     }
-   
 };
