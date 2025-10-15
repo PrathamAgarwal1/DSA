@@ -1,24 +1,26 @@
 class Solution {
 public:
     int romanToInt(string s) {
-        unordered_map<char,int>rtoi;
-        rtoi['I']=1;
-        rtoi['V']=5;
-        rtoi['X']=10;
-        rtoi['L']=50;
-        rtoi['C']=100;
-        rtoi['D']=500;
-        rtoi['M']=1000;
+        //find nearest
+        //if -ve roman se oehle add krte if ++ve roman ke baad mei add krte 
+        unordered_map <char,int> mpp;
+        mpp['I']=1;
+        mpp['V']=5;
+        mpp['X']=10;
+        mpp['L']=50;
+        mpp['C']=100;
+        mpp['D']=500;
+        mpp['M']=1000;
         int result=0;
         for(int i=0;i<s.size();i++){
-            if(rtoi[s[i]]<rtoi[s[i+1]]){
-                result-=rtoi[s[i]];
+            if(mpp[s[i]]<mpp[s[i+1]]){
+                result-=mpp[s[i]];
+
             }
-            else{//if next is not less that this just simply add 
-                result+=rtoi[s[i]];
+            else if(mpp[s[i]]>=mpp[s[i+1]]){
+                result+=mpp[s[i]];
             }
         }
         return result;
-
     }
 };
